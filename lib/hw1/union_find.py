@@ -170,33 +170,126 @@ if __name__ == "__main__":
 
     # iteration
     set_szs = [10]
-    timing = []
-
+    timing = [[], [], [], [], []]
+    x = [10**i for i in range(1, 7)]
     # gives the timing for union operation only, you might want to do this for all functions you wrote.
     for set_sz in set_szs:
         # initialize network nodes
         inodes = UF()
         inodes.qf_init(set_sz)
 
-        t0 = time.time()
+        for index in x:
+            t0 = time.time()
 
-        for idx in range(set_sz - 1):
-            rp = random.randint(0, set_sz - 1)
-            rq = random.randint(0, set_sz - 1)
+            for idx in range(index):
+                rp = random.randint(0, set_sz-1)
+                rq = random.randint(0, set_sz-1)
 
-            inodes.qf_union(rp, rq)
+                inodes.qf_union(rp, rq)
 
-        t1 = time.time()
+            t1 = time.time()
 
-        total_time = t1 - t0
+            total_time = t1 - t0
 
-        timing.append(total_time)
+            timing[0].append(total_time)
 
-        print(total_time)
+            print(total_time)
 
+
+    for set_sz in set_szs:
+        # initialize network nodes
+        inodes = UF()
+        inodes.qf_init(set_sz)
+
+        for index in x:
+            t0 = time.time()
+
+            for idx in range(index):
+                rp = random.randint(0, set_sz-1)
+                rq = random.randint(0, set_sz-1)
+
+                inodes.qu_union(rp, rq)
+
+            t1 = time.time()
+
+            total_time = t1 - t0
+
+            timing[1].append(total_time)
+
+            print(total_time)
+
+    for set_sz in set_szs:
+        # initialize network nodes
+        inodes = UF()
+        inodes.qf_init(set_sz)
+
+        for index in x:
+            t0 = time.time()
+
+            for idx in range(index):
+                rp = random.randint(0, set_sz-1)
+                rq = random.randint(0, set_sz-1)
+
+                inodes.wqu_union(rp, rq)
+
+            t1 = time.time()
+
+            total_time = t1 - t0
+
+            timing[2].append(total_time)
+
+            print(total_time)
+
+    for set_sz in set_szs:
+        # initialize network nodes
+        inodes = UF()
+        inodes.qf_init(set_sz)
+
+        for index in x:
+            t0 = time.time()
+
+            for idx in range(index):
+                rp = random.randint(0, set_sz-1)
+                rq = random.randint(0, set_sz-1)
+
+                inodes.pqu_union(rp, rq)
+
+            t1 = time.time()
+
+            total_time = t1 - t0
+
+            timing[3].append(total_time)
+
+            print(total_time)
+    for set_sz in set_szs:
+        # initialize network nodes
+        inodes = UF()
+        inodes.qf_init(set_sz)
+
+        for index in x:
+            t0 = time.time()
+
+            for idx in range(index):
+                rp = random.randint(0, set_sz-1)
+                rq = random.randint(0, set_sz-1)
+
+                inodes.wpqu_union(rp, rq)
+
+            t1 = time.time()
+
+            total_time = t1 - t0
+
+            timing[4].append(total_time)
+
+            print(total_time)
     # this plots things in log scale (pls google it), you need to add matplotlib to your virtualenv first!
-
-    plt.plot(set_szs, timing)
+    plt.plot(x, timing[0], label="QF_UNION")
+    plt.plot(x, timing[1], label="QU_UNION")
+    plt.plot(x, timing[2], label="WQU_UNION")
+    plt.plot(x, timing[3], label="PQU_UNION")
+    plt.plot(x, timing[4], label="WPQU_UNION")
+    plt.legend()
+   # plt.plot(set_szs, timing)
     plt.xscale('log')
     plt.yscale('log')
     plt.title('log')
