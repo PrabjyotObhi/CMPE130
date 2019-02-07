@@ -1,4 +1,4 @@
-#Prabjyot CMPE130
+# Prabjyot CMPE130
 
 # 1. quick-find
 # 2. quick-union
@@ -8,7 +8,9 @@
 
 import time
 import random
-#import matplotlib.pyplot as plt
+
+
+# import matplotlib.pyplot as plt
 
 class UF(object):
     """Union Find class
@@ -17,7 +19,6 @@ class UF(object):
 
     def __init__(self):
         self.id = []
-
 
     def qf_init(self, N):
         """initialize the data structure
@@ -34,23 +35,19 @@ class UF(object):
         (linear number of array accesses)
 
         """
-        pid= id[p]
-        qid= id[q]
+        pid = id[p]
+        qid = id[q]
         for x in len(id):
-            if id[x]==pid:
-                id[x]=qid
-
-
-
-    return 1
-
+            if id[x] == pid:
+                id[x] = qid
+        return 1
 
     def qf_connected(self, p, q):
         """Find operation for Quick-Find Algorithm.
         simply test whether p and q are connected
 
         """
-        #if they are connected the values in them should be equal
+        # if they are connected the values in them should be equal
         return self.id[p] == self.id[q]
 
         return True
@@ -58,14 +55,24 @@ class UF(object):
 
 
 
+        #qu_find Function
+    def qu_find(self, i):
+        while i != id[i]:
+            i = id[i]
+
+        return i
+
+        #qu_union function
+
     def qu_union(self, p, q):
         """Union operation for Quick-Union Algorithm.
          connect p and q.
 
          """
-
+        i = self.qu_find(p)
+        j = self.qu_find(q)
+        id[i]=j
         return 1
-
 
     def qu_connected(self, p, q):
         """Find operation for Quick-Union Algorithm.
@@ -75,7 +82,6 @@ class UF(object):
 
         return True
 
-
     def wqu_union(self, p, q):
         """Union operation for Weighted Quick-Union Algorithm.
          connect p and q.
@@ -83,7 +89,6 @@ class UF(object):
          """
 
         return 1
-
 
     def wqu_connected(self, p, q):
         """Find operation for Weighted Quick-Union Algorithm.
@@ -93,7 +98,6 @@ class UF(object):
 
         return True
 
-
     def pqu_union(self, p, q):
         """Union operation for path compressed Quick-Union Algorithm.
          connect p and q.
@@ -101,7 +105,6 @@ class UF(object):
          """
 
         return 1
-
 
     def pqu_connected(self, p, q):
         """Find operation for path compressed Quick-Union Algorithm.
@@ -119,7 +122,6 @@ class UF(object):
 
         return 1
 
-
     def wpqu_connected(self, p, q):
         """Find operation for Weighted path compressed Quick-Union Algorithm.
          test whether p and q are connected
@@ -127,6 +129,7 @@ class UF(object):
          """
 
         return True
+
 
 if __name__ == "__main__":
 
@@ -157,7 +160,6 @@ if __name__ == "__main__":
         print(total_time)
 
     # this plots things in log scale (pls google it), you need to add matplotlib to your virtualenv first!
-
 
     # plt.plot(set_szs, timing)
     # plt.xscale('log')
