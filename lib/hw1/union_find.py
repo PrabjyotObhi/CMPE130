@@ -93,7 +93,7 @@ class UF(object):
             self.id[i] = j
             self.sz[j] += self.sz[i]
         else:
-            id[j] = i
+            self.id[j] = i
             self.sz[i] += self.sz[j]
 
         return 1
@@ -103,9 +103,11 @@ class UF(object):
          test whether p and q are connected
 
          """
-        i = self.pq_find(p)
-        j = self.pq_find(q)
-        return i is j
+        i = self.qu_find(p)
+        j = self.qu_find(q)
+        print(i)
+        print(j)
+        return i == j
 
 
     # Need a new path compression find function

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d1a7595-dc58-4115-a22c-7934683a536d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cmpe130s19_obhi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cmpe130s19_obhi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hw1/union_find.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw1/union_find.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_hw1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_hw1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test_hw1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="-1321">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -32,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/hw1/union_find.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1066">
-              <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+            <state relative-caret-position="234">
+              <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
               <folding>
                 <element signature="e#134#145#0" expanded="true" />
               </folding>
@@ -66,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="829" />
@@ -198,9 +196,24 @@
     <history-entry file="pytest_in_cmpe130s19_obhi - 2019.02.07 at 14h 19m 59s.xml">
       <configuration name="pytest in cmpe130s19_obhi" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_cmpe130s19_obhi - 2019.02.07 at 14h 28m 43s.xml">
+      <configuration name="pytest in cmpe130s19_obhi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_cmpe130s19_obhi - 2019.02.07 at 14h 43m 07s.xml">
+      <configuration name="pytest in cmpe130s19_obhi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_cmpe130s19_obhi - 2019.02.07 at 14h 44m 08s.xml">
+      <configuration name="pytest in cmpe130s19_obhi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_cmpe130s19_obhi - 2019.02.07 at 14h 44m 28s.xml">
+      <configuration name="pytest in cmpe130s19_obhi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_cmpe130s19_obhi - 2019.02.07 at 14h 45m 32s.xml">
+      <configuration name="pytest in cmpe130s19_obhi" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="829" extended-state="0" />
+    <frame x="0" y="34" width="1440" height="829" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17336152" />
@@ -249,15 +262,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_hw1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="-1321">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw1/union_find.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1066">
-          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+        <state relative-caret-position="234">
+          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
           <folding>
             <element signature="e#134#145#0" expanded="true" />
           </folding>
