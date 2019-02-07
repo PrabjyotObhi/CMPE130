@@ -2,6 +2,7 @@
 import lib.hw1.union_find
 
 class Test_UF(object):
+    print("Victor's a hoe")
     @classmethod
     def setup_class(klass):
         """This method is run once for each class before any tests are run"""

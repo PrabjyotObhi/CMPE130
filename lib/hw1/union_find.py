@@ -8,9 +8,8 @@
 
 import time
 import random
+import matplotlib.pyplot
 
-
-# import matplotlib.pyplot as plt
 
 class UF(object):
     """Union Find class
@@ -19,6 +18,7 @@ class UF(object):
 
     def __init__(self):
         self.id = []
+        self.sz = []
 
     def qf_init(self, N):
         """initialize the data structure
@@ -26,6 +26,7 @@ class UF(object):
         """
         for x in range(N):
             self.id.append(x)
+        self.sz = [1] * N
 
     def qf_union(self, p, q):
         """Union operation for Quick-Find Algorithm.
@@ -77,26 +78,23 @@ class UF(object):
          """
         return self.id[p] == self.id[q]
 
-        return True
-
     # weighted quick union uses the same find as quick union
     def wqu_union(self, p, q):
         """Union operation for Weighted Quick-Union Algorithm.
          connect p and q.
 
          """
-        sz = [ ]
         i = self.qu_find(p)
         j = self.qu_find(q)
         if i == j:
             return;
 
-        if sz[i]<sz[j]:
+        if self.sz[i] < self.sz[j]:
             id[i] = j
-            sz[j] += sz[i]
+            self.sz[j] += self.sz[i]
         else:
             id[j] = i
-            sz[i] += sz[j]
+            self.sz[i] += self.sz[j]
 
         return 1
 
@@ -107,7 +105,6 @@ class UF(object):
          """
         return self.id[p] == self.id[q]
 
-        return True
 
     # Need a new path compression find function
     def pq_find(self, i):
@@ -135,8 +132,6 @@ class UF(object):
          """
         return self.id[p] == self.id[q]
 
-        return True
-
     # weighted quick union process with the path compression find function
 
     def wpqu_union(self, p, q):
@@ -144,18 +139,17 @@ class UF(object):
          connect p and q.
 
          """
-        sz = [ ]
         i = self.pq_find(p)
         j = self.pq_find(q)
         if i == j:
             return;
 
-        if sz[i] < sz[j]:
+        if self.sz[i] < self.sz[j]:
             id[i] = j
-            sz[j] += sz[i]
+            self.sz[j] += self.sz[i]
         else:
             id[j] = i
-            sz[i] += sz[j]
+            self.sz[i] += self.sz[j]
 
         return 1
 
@@ -165,8 +159,6 @@ class UF(object):
 
          """
         return self.id[p] == self.id[q]
-
-        return True
 
 
 if __name__ == "__main__":
