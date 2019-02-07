@@ -52,18 +52,14 @@ class UF(object):
 
         return True
 
-
-
-
-        #qu_find Function
+        # qu_find Function
     def qu_find(self, i):
         while i != id[i]:
             i = id[i]
 
         return i
 
-        #qu_union function
-
+        # qu_union function
     def qu_union(self, p, q):
         """Union operation for Quick-Union Algorithm.
          connect p and q.
@@ -71,11 +67,8 @@ class UF(object):
          """
         i = self.qu_find(p)
         j = self.qu_find(q)
-        id[i]=j
+        id[i] = j
         return 1
-
-
-
 
     def qu_connected(self, p, q):
         """Find operation for Quick-Union Algorithm.
@@ -86,16 +79,24 @@ class UF(object):
 
         return True
 
-
-
-
-
-
+    # weighted quick union uses the same find as quick union
     def wqu_union(self, p, q):
         """Union operation for Weighted Quick-Union Algorithm.
          connect p and q.
 
          """
+        sz = [ ]
+        i = self.qu_find(p)
+        j = self.qu_find(q)
+        if i == j:
+            return;
+
+        if sz[i]<sz[j]:
+            id[i] = j
+            sz[j] += sz[i]
+        else:
+            id[j] = i
+            sz[i] += sz[j]
 
         return 1
 
@@ -108,12 +109,23 @@ class UF(object):
 
         return True
 
+    # Need a new path compression find function
+    def pq_find(self, i):
+        while i != id[i]:
+            id[i] = id[id[i]]
+            i = id[i]
+
+        return i
+
+    # pqunion uses the new pq_find function with the logic from qu
     def pqu_union(self, p, q):
         """Union operation for path compressed Quick-Union Algorithm.
          connect p and q.
 
          """
-
+        i = self.pq_find(p)
+        j = self.pq_find(q)
+        id[i] = j
         return 1
 
     def pqu_connected(self, p, q):
@@ -125,11 +137,25 @@ class UF(object):
 
         return True
 
+    # weighted quick union process with the path compression find function
+
     def wpqu_union(self, p, q):
         """Union operation for Weighted path compressed Quick-Union Algorithm.
          connect p and q.
 
          """
+        sz = [ ]
+        i = self.pq_find(p)
+        j = self.pq_find(q)
+        if i == j:
+            return;
+
+        if sz[i] < sz[j]:
+            id[i] = j
+            sz[j] += sz[i]
+        else:
+            id[j] = i
+            sz[i] += sz[j]
 
         return 1
 
@@ -139,7 +165,7 @@ class UF(object):
 
          """
         return self.id[p] == self.id[q]
-        
+
         return True
 
 
