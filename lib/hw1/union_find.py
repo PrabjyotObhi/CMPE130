@@ -74,13 +74,22 @@ class UF(object):
         id[i]=j
         return 1
 
+
+
+
     def qu_connected(self, p, q):
         """Find operation for Quick-Union Algorithm.
          test whether p and q are connected
 
          """
+        return self.id[p] == self.id[q]
 
         return True
+
+
+
+
+
 
     def wqu_union(self, p, q):
         """Union operation for Weighted Quick-Union Algorithm.
@@ -95,6 +104,7 @@ class UF(object):
          test whether p and q are connected
 
          """
+        return self.id[p] == self.id[q]
 
         return True
 
@@ -111,6 +121,7 @@ class UF(object):
          test whether p and q are connected
 
          """
+        return self.id[p] == self.id[q]
 
         return True
 
@@ -127,7 +138,8 @@ class UF(object):
          test whether p and q are connected
 
          """
-
+        return self.id[p] == self.id[q]
+        
         return True
 
 
