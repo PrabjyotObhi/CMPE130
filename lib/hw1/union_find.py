@@ -34,9 +34,15 @@ class UF(object):
         (linear number of array accesses)
 
         """
+        pid= id[p]
+        qid= id[q]
+        for x in len(id):
+            if id[x]==pid:
+                id[x]=qid
 
 
-        return 1
+
+    return 1
 
 
     def qf_connected(self, p, q):
@@ -44,9 +50,11 @@ class UF(object):
         simply test whether p and q are connected
 
         """
+        #if they are connected the values in them should be equal
+        return self.id[p] == self.id[q]
 
         return True
-        #return self.id[p] == self.id[q]
+
 
 
 
