@@ -19,4 +19,18 @@ f4 = float("4.2")
 print("f1 is: ", f1, "\n" "f2 is: ", f2, "\n" "f3 is: ", f3, "\n" "f4 is: ", f4)
 
 print(int(f4))
+print("\n")
+
+
+# STRING LITERALS
+
+str1 = " Hello, World "
+
+print(str1[1])
+print(str1[1:6])
+print(str1[::-1])
+print(str1.upper())
+print(str1.lower())
+print(str1.split(","))
+print(str1.strip())
 

@@ -64,6 +64,68 @@ def mergeSort(arr):
             k += 1
 
 
+def partition(arr, low, high):
+    i = low - 1
+    pivot = arr[high]
+
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i = i + 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return (i + 1)
+
+
+
+def QuickSort(arr, low, high):
+    if low<high:
+        p1= partition(arr, low, high)
+        QuickSort(arr, low, p1 - 1)
+        QuickSort(arr, p1+1, high)
+
+def shellSort(arr):
+    n = len(arr)
+    gap = n//2
+
+    while gap > 0:
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+
+            while j >= gap and arr[j-gap] > temp:
+                arr[j] = arr[j-gap]
+                j -= gap
+
+            arr[j] = temp
+        gap //= 2
+
+def heapify(arr, n, i):
+    largest = i
+    left = 2*i + 1
+    right = 2*i + 2
+
+    if left < n and arr[i] < arr[left]:
+        largest = left
+
+    if right < n and arr[largest] < arr[right]:
+        largest = right
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+
+        heapify(arr, n, largest)
+
+
+def heapSort(arr):
+    n = len(arr)
+
+    for i in range(n, -1, -1):
+        heapify(arr, n, i)
+    for i in range(n-1, 0, -1):
+       arr[i], arr[0] = arr[0], arr[i]
+       heapify(arr, i, 0)
+
+
 
 '''     
 print(selectionSortArray)
@@ -71,7 +133,7 @@ lst = ['apples', 'bananas', 'oranges']
 print(lst)
 '''
 
-'''
+''''
 generateNumbers = []
 
 for x in range(15):
@@ -95,4 +157,21 @@ print("Sorted insertionSortArray: ", insertionSortArray, "\n")
 mergeSortArray = [560, 826, 649, 828, 897, 471, 162, 250, 907, 484, 605, 102, 600, 477, 747, 412]
 print("Unsorted mergeSortArray: ", mergeSortArray)
 mergeSort(mergeSortArray)
-print("Sorted mergeSortArray: ", mergeSortArray)
+print("Sorted mergeSortArray: ", mergeSortArray, "\n")
+
+quickSortArray = [226, 497, 183, 262, 951, 781, 72, 450, 551, 88, 500, 359, 330, 777, 642]
+print("Unsorted quickSortArray: ", quickSortArray)
+QuickSort(quickSortArray, 0, 14)
+print("Sorted quickSortArray:", quickSortArray, "\n")
+
+shellsortArray = [202, 966, 253, 196, 611, 449, 22, 929, 157, 506, 155, 849, 993, 145, 36]
+print("Unsorted shellsortarray: ", shellsortArray)
+shellSort(shellsortArray)
+print("Sorted shellsortarray: ", shellsortArray, "\n")
+
+heapsortArray = [253, 227, 991, 583, 983, 387, 211, 741, 94, 547, 663, 378, 319, 844, 78]
+print("Unsorted heapsortarray: ", heapsortArray)
+heapSort(heapsortArray)
+print("Sorted heapsortarray: ", heapsortArray, "\n")
+
+
