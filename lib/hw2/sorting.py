@@ -137,45 +137,57 @@ class Sorting(object):
 
         return self.id
 
+    def merge(self, low, mid, high):
+        temporary = mid - low + 1
+        temporary2 = high - mid
+
+        rightArray = [0] * temporary2
+        leftArray = [0] * temporary
+
+        for i in range(0, temporary):
+            leftArray[i] = self.id[low + i]
+        for i in range(0, temporary2):
+            rightArray[i] = self.id[mid + 1 + i]
+
+        first = second = 0
+        combined = low
+
+        while first < temporary and second < temporary2:
+            if leftArray[first] <= rightArray[second]:
+                self.id[combined] = leftArray[first]
+                first += 1
+            else:
+                self.id[combined] = rightArray[second]
+                second +=1
+            combined += 1
+
+        while first < temporary:
+            self.id[combined] = leftArray[first]
+            first += 1
+            combined += 1
+
+        while second < temporary2:
+            self.id[combined] = rightArray[second]
+            second += 1
+            combined += 1
+
+        return self.id
+
+    def merge_together(self, low, high):
+        if low < high:
+            mid = round(((high - 1) + low)/2)
+            Sorting.merge_together(self, low, mid)
+            Sorting.merge_together(self, mid + 1, high)
+            Sorting.merge(self, low, mid, high)
+        return self.id
+
     def merge_sort(self):
         """Merge sort is a divide and conquer algorithm that was invented
         by John von Neumann in 1945. Most implementations produce a stable
         sort, which means that the implementation preserves the input order
         of equal elements in the sorted output.
         """
-        if len(self.id) > 1:
-            # FLOOR DIVISION
-            mid = len(self.id) // 2
-            # SPLIT THE ARRAY INTO TWO "EQUAL" SUBARRAYS
-            L = self.id[:mid]
-            R = self.id[mid:]
-            # RECURSION TO GET TO LENGTH ONE, SO IT WILL BE NATURALLY SORTED
-            Sorting.merge_sort(L)
-            Sorting.merge_sort(R)
-
-            # SETTING UP POINTERS FOR LEFT, RIGHT, AND THE FINAL ARRAY
-            i = j = k = 0
-
-            # CAN ONLY DO THIS AS LONG AS I AND J ARE LESS THAN THE LENGTHS OF THEIR RESPECTIVE ARRAYS
-            while i < len(L) and j < len(R):
-                if L[i] < R[j]:
-                    self.id[k] = L[i]
-                    i = i + 1
-                else:
-                    self.id[k] = R[j]
-                    j = j + 1
-                k = k + 1
-
-            while i < len(L):
-                self.id[k] = L[i]
-                i += 1
-                k += 1
-
-            while j < len(R):
-                self.id[k] = R[j]
-                j += 1
-                k += 1
-
+        Sorting.merge_together(self, 0, len(self.id) - 1)
         return self.id
 
     def partition(self, low, high):
