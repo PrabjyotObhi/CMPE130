@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d1a7595-dc58-4115-a22c-7934683a536d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hw2/sorting.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw2/sorting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hw3/search_trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw3/search_trees.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +15,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/hw2/sorting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
+            <state relative-caret-position="3450">
               <caret line="232" column="4" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="4" />
               <folding>
                 <element signature="e#104#115#0" expanded="true" />
@@ -28,7 +27,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/hw3/search_trees.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1359" />
+            <state relative-caret-position="76">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -77,6 +78,7 @@
         <option value="$PROJECT_DIR$/Sorting_Tests.py" />
         <option value="$PROJECT_DIR$/PlayingWithPython.py" />
         <option value="$PROJECT_DIR$/lib/hw2/sorting.py" />
+        <option value="$PROJECT_DIR$/lib/hw3/search_trees.py" />
       </list>
     </option>
   </component>
@@ -111,6 +113,11 @@
             </path>
             <path>
               <item name="cmpe130s19_obhi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cmpe130s19_obhi" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cmpe130s19_obhi" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -141,28 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sorting">
-    <configuration name="PlayingWithPython" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="cmpe130s19_obhi" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PlayingWithPython.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.pytest in test_hw3.py">
     <configuration name="Sorting_Tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cmpe130s19_obhi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -250,21 +236,36 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_hw3.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="cmpe130s19_obhi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_hw3.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Sorting_Tests" />
-      <item itemvalue="Python.PlayingWithPython" />
       <item itemvalue="Python.sorting" />
       <item itemvalue="Python tests.pytest in cmpe130s19_obhi" />
       <item itemvalue="Python tests.pytest in test_hw2.py" />
       <item itemvalue="Python tests.pytest in test_hw1.py" />
+      <item itemvalue="Python tests.pytest in test_hw3.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_hw3.py" />
         <item itemvalue="Python.sorting" />
         <item itemvalue="Python tests.pytest in test_hw2.py" />
         <item itemvalue="Python tests.pytest in test_hw1.py" />
         <item itemvalue="Python.Sorting_Tests" />
-        <item itemvalue="Python.PlayingWithPython" />
       </list>
     </recent_temporary>
   </component>
@@ -282,9 +283,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_test_hw2_py - 2019.02.20 at 23h 57m 23s.xml">
-      <configuration name="pytest in test_hw2.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_test_hw2_py - 2019.02.20 at 23h 57m 39s.xml">
       <configuration name="pytest in test_hw2.py" configurationId="tests" />
     </history-entry>
@@ -312,22 +310,25 @@
     <history-entry file="pytest_in_test_hw2_py - 2019.02.21 at 22h 28m 42s.xml">
       <configuration name="pytest in test_hw2.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_test_hw3_py - 2019.03.05 at 21h 28m 16s.xml">
+      <configuration name="pytest in test_hw3.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="826" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921507" visible="true" weight="0.17336152" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49921507" visible="true" weight="0.17336152" />
       <window_info id="Structure" order="1" sideWeight="0.50078493" side_tool="true" weight="0.17336152" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24698795" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24623802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39808482" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32697546" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3269494" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32833788" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32970026" />
@@ -497,16 +498,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw2/sorting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="3450">
           <caret line="232" column="4" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="4" />
           <folding>
             <element signature="e#104#115#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hw3/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw3/hw3.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -516,12 +514,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hw3/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw3/search_trees.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1359" />
+        <state relative-caret-position="76">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
       </provider>
     </entry>
   </component>

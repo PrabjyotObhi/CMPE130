@@ -20,10 +20,16 @@ class Array_Search:
         return False
 
     def bsearch(self, val):
-        length = len(self.array)
-        low = self.array[0]
-        high = self.array[length-1]
+        low = 0
+        high = len(self.array)
         
+        while low <= high:
+            mid = (high - low) / 2
+            if self.array[mid] == val:
+                return mid
+            if self.array[mid] > val:
+
+
 
         return False
 
