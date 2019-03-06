@@ -229,9 +229,11 @@ class Sorting(object):
 if __name__ == "__main__":
 
     set_szs = [10]
-    timing = [[], [], [], [], [], []]
-    x = [10 ** i for i in range(1, 5)]
+    timing = [[], [], [], [], [], [],[]]
+    x = [10 ** i for i in range(1, 7)]
         # gives the timing for union operation only, you might want to do this for all functions you wrote.
+
+    '''
     for set_sz in x:
             # initialize network nodes
         inodes = Sorting()
@@ -266,6 +268,9 @@ if __name__ == "__main__":
         timing[1].append(total_time)
 
         print(total_time)
+        
+    '''
+
     for set_sz in x:
             # initialize network nodes
         inodes = Sorting()
@@ -331,12 +336,30 @@ if __name__ == "__main__":
 
         print(total_time)
 
-    plt.plot(x, timing[0], label="Selection_Sort")
-    plt.plot(x, timing[1], label="Insertion_Sort")
+    for set_sz in x:
+            # initialize network nodes
+        inodes = Sorting()
+        inodes.sort_init(set_sz)
+
+        t0 = time.time()
+
+        x.sort()
+
+        t1 = time.time()
+
+        total_time = t1 - t0
+
+        timing[6].append(total_time)
+
+        print(total_time)
+
+   # plt.plot(x, timing[0], label="Selection_Sort")
+   # plt.plot(x, timing[1], label="Insertion_Sort")
     plt.plot(x, timing[2], label="Merge_Sort")
     plt.plot(x, timing[3], label="Shell_Sort")
     plt.plot(x, timing[4], label="Heap_Sort")
     plt.plot(x, timing[5], label="Quick_Sort")
+    plt.plot(x, timing[6], label="python_sort")
     plt.legend()
 
 
