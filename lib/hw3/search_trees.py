@@ -178,7 +178,16 @@ class RBBST:
 
         return False
 
-    def searchNode(self, current, val):
+    def searchNode(self, current, val, index):
+        
+        if current is None:
+            return -1
+        if current.val is val:
+            return index
+        elif current.val > val:
+            self.searchNode(current.left, val, 2 * index + 1)
+        else:
+            self.searchNode(current.right, val, 2 * index + 2)
 
         return False
 
