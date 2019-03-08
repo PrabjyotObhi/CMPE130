@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/hw3/search_trees.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="326">
+              <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -83,8 +83,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="564" />
+    <option name="y" value="190" />
     <option name="width" value="1440" />
     <option name="height" value="826" />
   </component>
@@ -93,6 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,7 +126,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,9 +285,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_test_hw2_py - 2019.02.20 at 23h 57m 39s.xml">
-      <configuration name="pytest in test_hw2.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_test_hw2_py - 2019.02.20 at 23h 58m 02s.xml">
       <configuration name="pytest in test_hw2.py" configurationId="tests" />
     </history-entry>
@@ -314,17 +312,20 @@
     <history-entry file="pytest_in_test_hw3_py - 2019.03.05 at 21h 28m 16s.xml">
       <configuration name="pytest in test_hw3.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_test_hw3_py - 2019.03.06 at 22h 17m 52s.xml">
+      <configuration name="pytest in test_hw3.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="826" extended-state="6" />
+    <frame x="564" y="190" width="1440" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49921507" visible="true" weight="0.17336152" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49921507" weight="0.17336152" />
       <window_info id="Structure" order="1" sideWeight="0.50078493" side_tool="true" weight="0.17336152" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24623802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24523161" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39808482" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -523,8 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw3/search_trees.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="326">
+          <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
         </state>
       </provider>
     </entry>

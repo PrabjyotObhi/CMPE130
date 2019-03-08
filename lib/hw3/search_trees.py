@@ -56,6 +56,20 @@ class BST:
             self.insertNode(self.root, val)
 
     def insertNode(self, current, val):
+        if self.root is None:
+            self.root = val
+        else:
+            if self.root.val < val:
+                if self.root.right is None:
+                    self.root.right = val
+                else:
+                    self.insertNode(self, self.root.right, val)
+            else:
+                if self.root.left is None:
+                    self.root.left = val
+                else:
+                    self.insertNode(self, self.root.left, val)
+
 
         return False
 
