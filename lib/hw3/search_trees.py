@@ -145,10 +145,19 @@ class RBBST:
         return False
 
     def rotate_right(self, current):
+        x = current.left
+        current.left = x.right
+        x.right = current
+        x.color = current.color
+        current.color = RED
+        return x
 
         return False
 
     def flip_colors(self, current):
+        current.color = RED
+        current.left.color = BLACK
+        current.right.color = BLACK
 
         return False
 
