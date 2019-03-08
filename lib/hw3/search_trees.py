@@ -127,13 +127,19 @@ class RBBST:
         self.root = RBBST_Node(val, color)
 
     def is_red(self, current):
-
-
+        if current is None:
+            return False
+        return current.color
 
         return False
 
     def rotate_left(self, current):
-
+        x = self.current.right
+        self.current.right = x.left
+        x.left = current
+        x.color = current.color
+        current.color = RED
+        return x
 
 
         return False
