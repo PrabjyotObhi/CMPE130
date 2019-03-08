@@ -74,7 +74,11 @@ class BST:
         return False
 
     def bsearch(self, val):
-
+        if self.root is None or self.root.val == val:
+            return self.root
+        if self.root.val < val:
+            return self.bsearch(self.root.right, val)
+        return self.bsearch(self.left, val)
 
         return False
 
@@ -83,6 +87,21 @@ class BST:
         return False
 
     def delete(self, val):
+        if val < self.root.val:
+            self.root.left = self.delete(self.root.left, val)
+        elif val > self.root.val:
+            self.root.right = self.delete(self.root.right, val)
+        else:
+            if self.root.left is None:
+                temp = self.root.right
+                self.root.right = None
+                return temp
+            elif self.root.right is None:
+                temp = self.root.left
+                self.root.left = None
+                return temp
+            while self.temp.left is not None:
+                self.temp = self.temp.left
 
         return False
 
