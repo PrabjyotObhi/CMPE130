@@ -7,7 +7,12 @@ class Graph():
         self.graph = [[0 for column in range(vertices)]  
                     for row in range(vertices)] 
 
-    def primMST(self): 
+    def primMST(self):
+
+    def minPQ(self, value, set):
+        min = sys.maxsize
+
+        for v in range(self.V)
 
 
 
