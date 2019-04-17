@@ -20,6 +20,20 @@ class Graph:
 		return 1
 
 	def bfs(self, v):
+		visited = [False]*(len(self.Graph))
+		queue = []
+		queue.append(v)
+		visited[v] = True
+
+		while queue:
+			v = queue.pop(0)
+			print(v, end=" ")
+			for i in self.Graph[v]:
+				if visited[i] == False:
+					queue.append(i)
+					visited[i] = True
+
+
 
 
 
