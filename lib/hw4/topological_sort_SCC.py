@@ -11,13 +11,22 @@ class Graph:
         self.graph[u].append(v) 
 
 
+    def sort(self, v, marked, stack):
+        marked[v] = True
+        for i in self.graph[v]:
+            if marked[i] is False:
+                self.sort(i, marked, stack)
+        stack.insert(0, v)
 
-    def topological_Sort(self): 
+    def topological_Sort(self):
+        marked = self.V * [False]
+        stack = []
+        for i in range(self.V):
+            if marked[i] is False:
+                self.sort(i, marked, stack)
+        print(stack)
+        return 1
 
+    def SCC(self):    # strongly connected componentssx
 
-    	return 1
-
-
-   	def SCC(self):    # strongly connected components
-
-   		return 1
+    # return 1
