@@ -27,6 +27,5 @@ class Graph:
         print(stack)
         return 1
 
-    def SCC(self):    # strongly connected componentssx
-
-    # return 1
+    def SCC(self):    # strongly connected componentss
+        return 1

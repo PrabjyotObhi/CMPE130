@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2d1a7595-dc58-4115-a22c-7934683a536d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hw4/dfs_bfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw4/dfs_bfs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hw4/prims.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw4/prims.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hw4/topological_sort_SCC.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw4/topological_sort_SCC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/hw4/dfs_bfs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+            <state relative-caret-position="285">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -34,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/hw4/directed_graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="510">
               <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
             </state>
           </provider>
@@ -48,22 +50,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/hw4/prims.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/hw4/topological_sort_SCC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="645">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/hw4/topological_sort_SCC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/hw4/hw4.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/hw4/undirected_graph.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -95,9 +107,9 @@
         <option value="$PROJECT_DIR$/lib/hw2/sorting.py" />
         <option value="$PROJECT_DIR$/lib/hw3/search_trees.py" />
         <option value="$PROJECT_DIR$/Random Stuff.py" />
-        <option value="$PROJECT_DIR$/lib/hw4/prims.py" />
-        <option value="$PROJECT_DIR$/lib/hw4/dfs_bfs.py" />
         <option value="$PROJECT_DIR$/lib/hw4/topological_sort_SCC.py" />
+        <option value="$PROJECT_DIR$/lib/hw4/dfs_bfs.py" />
+        <option value="$PROJECT_DIR$/lib/hw4/prims.py" />
       </list>
     </option>
   </component>
@@ -111,7 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -134,6 +145,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,10 +284,10 @@
     <list>
       <item itemvalue="Python.sorting" />
       <item itemvalue="Python.Random Stuff" />
+      <item itemvalue="Python.topological_sort_SCC" />
       <item itemvalue="Python tests.pytest in cmpe130s19_obhi" />
       <item itemvalue="Python tests.pytest in test_hw2.py" />
       <item itemvalue="Python tests.pytest in test_hw3.py" />
-      <item itemvalue="Python.topological_sort_SCC" />
     </list>
     <recent_temporary>
       <list>
@@ -334,7 +346,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921507" visible="true" weight="0.17336152" />
       <window_info id="Structure" order="1" sideWeight="0.50078493" side_tool="true" weight="0.17336152" />
@@ -346,7 +357,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3269494" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3269494" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32833788" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32970026" />
@@ -552,39 +563,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hw4/dfs_bfs.py">
+    <entry file="file://$PROJECT_DIR$/lib/hw4/directed_graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="510">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw4/kruskal's.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hw4/prims.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+    <entry file="file://$PROJECT_DIR$/lib/hw4/hw4.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hw4/undirected_graph.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hw4/directed_graph.py">
+    <entry file="file://$PROJECT_DIR$/lib/hw4/dfs_bfs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hw4/prims.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw4/topological_sort_SCC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        <state relative-caret-position="450">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hw4/undirected_graph.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
