@@ -37,7 +37,6 @@ class Graph():
             set[j] = True
             for v in range(self.V):
                 if set[v] is False and self.graph[i][v] > 0:
-                    value[v] > self.graph[i][v]
                     value[v] = self.graph[i][v]
                     arr[v] = i
         self.printPrim(arr)
