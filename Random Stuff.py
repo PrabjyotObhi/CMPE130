@@ -285,6 +285,7 @@ for val in range(len(pid)):
                             physicalAddress[LRUIndex] = pid[val]
                             count = count - 1
                 else:
+                    print("yeet")
 
 
         if action[val] is 'R':
