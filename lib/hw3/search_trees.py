@@ -105,8 +105,6 @@ class BST:
 
         return False
 
-
-
 class RBBST_Node:
     def __init__(self, val, color):
         self.val = val
@@ -126,70 +124,73 @@ class RBBST:
     def init_rbbst(self, val, color):
         self.root = RBBST_Node(val, color)
 
-    def is_red(self, current):
-        if current is None:
-            return False
-        return current.color
-
-        return False
+    @staticmethod
+    def is_red(current):
+        red = False
+        if current:
+            red = current.color == RED
+        return red
 
     def rotate_left(self, current):
-        x = self.current.right
-        self.current.right = x.left
+        x = current.right
+        current.right = x.left
         x.left = current
+
         x.color = current.color
         current.color = RED
-        return x
-
-
-        return False
 
     def rotate_right(self, current):
         x = current.left
-        current.left = x.right
+        current.left = x.left
         x.right = current
+
         x.color = current.color
         current.color = RED
-        return x
-
-        return False
 
     def flip_colors(self, current):
-        current.color = RED
-        current.left.color = BLACK
-        current.right.color = BLACK
-
-        return False
+        current.right.color = current.color
+        current.color = current.left.color
+        current.left.color = current.right.color
 
     def insert(self, val):
-        if (self.root is None):
+        if self.root is None:
             self.init_rbbst(val, RED)
         else:
-            self.insertNode(self.root, val)
+            self.root = self.insertNode(self.root, val)
 
     def insertNode(self, current, val):
+        if current is None:
+            return RBBST_Node(val, RED)
 
+        if val == current.val:
+            return current
+        elif val > current.val:
+            current.right = self.insertNode(current.right, val)
+        else:
+            current.left = self.insertNode(current.left, val)
 
-
-
-        return False
+        if self.is_red(current.right) and not self.is_red(current.left):
+            self.rotate_left(current)
+        if self.is_red(current.left) and self.is_red(current.left.left):
+            self.rotate_right(current)
+        if self.is_red(current.left) and self.is_red(current.right):
+            self.flip_colors(current)
+        return current
 
     def bsearch(self, val):
+            return self.searchNode(self.root, val)
 
-        return False
-
-    def searchNode(self, current, val, index):
-        
+    def searchNode(self, current, val):
         if current is None:
-            return -1
-        if current.val is val:
-            return index
-        elif current.val > val:
-            self.searchNode(current.left, val, 2 * index + 1)
-        else:
-            self.searchNode(current.right, val, 2 * index + 2)
+            return None
 
-        return False
+        if val > current.val:
+            return self.searchNode(current.right, val)
+        elif val < current.val:
+            return self.searchNode(current.left, val)
+        else:
+            return current.val
+
 
 if __name__ == "__main__":
 

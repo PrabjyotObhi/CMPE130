@@ -41,8 +41,4 @@ class Graph():
                     value[v] = self.graph[i][v]
                     arr[v] = i
         self.printPrim(arr)
-
-
-
-
-    	return 1
+        return 1
