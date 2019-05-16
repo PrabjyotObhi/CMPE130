@@ -28,6 +28,7 @@ class Digraph:
 
     def remove(self, node):
         """ Remove all references to node """
+        print("Hi, does this work")
 
         for n, cxns in self.Digraph.iteritems():
             try:
