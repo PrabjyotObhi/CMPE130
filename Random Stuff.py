@@ -26,8 +26,8 @@ def readFile(file):
 
     return [processID, action, pagesRequired]
 
-def MemorySwapRand(file):
-    pid, action, pages = readFile(file)
+def MemorySwapRand(jobID, duration, arrivalTime):
+    pid, action, pages = jobID, duration, arrivalTime
     physicalAddress = ["X"] * 20
     virtualAddress = {}
     physicalAddressIndex = -1
@@ -57,7 +57,7 @@ def MemorySwapRand(file):
                     physicalAddress[j] = "X"
 
         if action[val] is 'C':
-            continue;
+            virtualAddress[pid[val]] = val + random.randint(0, 10000);
 
         # If the list is not full, we can go ahead and insert them into the physicalAddresses
         if notFull:
@@ -109,7 +109,30 @@ def MemorySwapRand(file):
                     randIndex = random.randint(0, 100) % 20
                     swap[physicalAddress[randIndex]] = randIndex
                     physicalAddress[randIndex] = pid[val]
-    return[physicalAddress, virtualAddress, swap]
+
+    amountforswap = []
+    uniquePID = list(dict.fromkeys(pid))
+
+
+    for x,y in swap.items():
+        uniquePID.append(x)
+        amountforswap.append(y)
+
+    yeet = 0
+    rubberband = 0
+    print("\n \n \t \t \tPrinting Map")
+    print("ProcessID  Virtual Address  Physical Address")
+    for val in pid:
+        print(val,  "          ", virtualAddress[val] + yeet,  "            ", rubberband)
+        yeet = yeet + 1
+        rubberband = rubberband + 1
+
+    #print swap
+    print("\n \n \tPrinting Swap")
+    print("ProcessID  Virtual Address")
+    for val in swap:
+        print(val, "           ", "S")
+
 
 def Max (a, b):
     if a > b:
@@ -120,16 +143,16 @@ def Max (a, b):
         max = a
     return max
 
-def MemorySwapFifo(file):
+def MemorySwapFifo(jobID, duration, arrivalTime):
 
-    pid, action, pages = readFile(file)
+    pid, action, pages = jobID, duration, arrivalTime
     physicalAddress = ["X"] * 20
     virtualAddress = {}
     physicalAddressIndex = -1
     notFull = False
     random.seed(9001)
     swap = {}
-    FIFOIndex = 0
+    FIFOIndex = -1
 
     for val in range(len(pid)):
         # Determine if the physical address list is full
@@ -205,17 +228,36 @@ def MemorySwapFifo(file):
                     swap[physicalAddress[FIFOIndex]] = FIFOIndex
                     physicalAddress[FIFOIndex] = pid[val]
 
-    return [physicalAddress, virtualAddress, swap]
+    amountforswap = []
+    uniquePID = list(dict.fromkeys(pid))
+    for x,y in swap.items():
+        uniquePID.append(x)
+        amountforswap.append(y)
+    yeet = 0
+    rubberband = 0
+    print("\n \n \t \t \tPrinting Map")
+    print("ProcessID  Virtual Address  Physical Address")
+    for val in pid:
+        print(val,  "          ", virtualAddress[val] + yeet,  "            ", rubberband)
+        yeet = yeet + 1
+        rubberband = rubberband + 1
 
-def MemorySwapLRU(file):
-    pid, action, pages = readFile(file)
+    #print swap
+    print("\n \n \tPrinting Swap")
+    print("ProcessID  Virtual Address")
+    for val in swap:
+        print(val, "           ", "S")
+
+
+def MemorySwapLRU(jobID, duration, arrivalTime):
+    pid, action, pages = jobID, duration, arrivalTime
     physicalAddress = ["X"] * 20
     virtualAddress = {}
     physicalAddressIndex = -1
     notFull = False
     random.seed(9001)
     swap = {}
-    LRUIndex = 0
+    LRUIndex = -1
     count = 0
     IndexA = {" "}
     indexAfinal = [ ]
@@ -280,6 +322,7 @@ def MemorySwapLRU(file):
         else:
             if action[val] is 'W':
                 if len(indexAfinal)>= 0:
+                    swap[physicalAddress[LRUIndex]] = LRUIndex
                     physicalAddress[indexAfinal[count]] = pid[val]
                     del indexAfinal[count]
                     count = count + 1
@@ -290,6 +333,7 @@ def MemorySwapLRU(file):
 
             if action[val] is 'R':
                  if len(indexAfinal)>= 0:
+                     swap[physicalAddress[LRUIndex]] = LRUIndex
                      physicalAddress[indexAfinal[count]] = pid[val]
                      del indexAfinal[count]
                      count = count + 1
@@ -302,7 +346,67 @@ def MemorySwapLRU(file):
                 LRUIndex = (LRUIndex + 1) % 20
                 swap[physicalAddress[LRUIndex]] = LRUIndex
                 physicalAddress[LRUIndex] = pid[val]
-    return [physicalAddress, virtualAddress, swap]
+    amountforswap = []
+    uniquePID = list(dict.fromkeys(pid))
+    for x,y in swap.items():
+        uniquePID.append(x)
+        amountforswap.append(y)
+    yeet = 0
+    rubberband = 0
+    print("\n \n \t \t \tPrinting Map")
+    print("ProcessID  Virtual Address  Physical Address")
+    for val in pid:
+        print(val,  "          ", virtualAddress[val] + yeet,  "            ", rubberband)
+        yeet = yeet + 1
+        rubberband = rubberband + 1
 
-pid, vadress, swap = MemorySwapFifo("memory.dat")
+    #print swap
+    print("\n \n \tPrinting Swap")
+    print("ProcessID  Virtual Address")
+    for val in swap:
+        print(val, "           ", "S")
 
+
+
+
+
+
+def __main__():
+    val = ''
+    try:
+        val = input("Please enter 0 to use our memory.dat file. If you would like to use your own file, please enter 1:\n")
+        if val != '0' and val != '1':
+            raise Exception()
+    except:
+        while True:
+            if val == '0' or val == '1':
+                break
+    finally:
+        if val == '0':
+            jobID, duration, arrivalTime = readFile("memory.dat")
+        elif val == '1':
+            fName = input("Enter the path to your file:\n")
+            jobID, duration, arrivalTime = readFile(fName)
+
+
+
+    print("Using Random:")
+    MemorySwapRand(jobID, duration, arrivalTime)
+
+    print("Using FIFO:")
+    MemorySwapFifo(jobID, duration, arrivalTime)
+
+    print("Using LRU:")
+    MemorySwapLRU(jobID, duration, arrivalTime)
+
+
+
+
+
+
+
+
+
+
+
+__main__()

@@ -26,8 +26,18 @@ class Digraph:
         
         return 1
 
-    def remove_node(self, node):
-        """removes vertices from your graph"""
+    def remove(self, node):
+        """ Remove all references to node """
+
+        for n, cxns in self.Digraph.iteritems():
+            try:
+                cxns.remove(node)
+            except KeyError:
+                pass
+        try:
+            del self.Digraph[node]
+        except KeyError:
+            pass
         
         return 1
 
