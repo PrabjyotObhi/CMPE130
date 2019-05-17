@@ -42,21 +42,28 @@ class Digraph:
         
         return 1
 
-    def remove(self, node):
-        """ Remove all references to node """
-        print("Hi, does this work")
+    def remove_node(self, node):
+        """removes nodes from your graph along with any vertices they induce"""
+        # check if input node is not in graph
+        if node not in self.nodeList:
+            print("Node not in graph, unable to delete")
+            return
 
-        for n, cxns in self.Digraph.iteritems():
-            try:
-                cxns.remove(node)
-            except KeyError:
-                pass
-        try:
-            del self.Digraph[node]
-        except KeyError:
-            pass
-        
-        return 1
+        # decrement edgeNum by the number of edges affected by deleting node
+        self.edgeNum -= len(self.parents[node]) + len(self.children[node])
+
+        # Delete parent link
+        for link1 in self.parents[node]:
+            del self.children[link1][node]
+
+        # Delete Child link
+        for link2 in self.children[node]:
+            del self.parents[link2][node]
+
+        # Delete node from dictionaries
+        del self.parents[node]
+        del self.children[node]
+        self.nodeList.remove(node)
 
     def contains(self, node):
         """checks if your graph contains a given value"""
