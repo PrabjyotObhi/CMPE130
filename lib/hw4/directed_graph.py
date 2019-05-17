@@ -3,16 +3,32 @@ class Digraph:
 
     def __init__(self):
         """Initializes this digraph."""
-        self.nodes = set()
-        self.edges = 0
+        self.edgeNum = 0  # number of edges
+        self.nodeList = set()  # graph nodes
+        self.parents = dict()  # parents held in dict
+        self.children = dict()  # children held in dict
 
     def add_node(self, node):
         """adds vertices to your graph"""
 
         return 1
-    def add_edge(self, last, first):
-        """creates edges between two given vertices in your graph"""
-        
+    def add_edge(self, first, last, weight):
+        """creates edge from 'first' to 'last' with assigned 'weight'"""
+
+        # first check that first or last are not already nodes
+        # if they do not exist, create them as new nodes
+        if first not in self.nodeList:
+            self.add_node(first)
+
+        if last not in self.nodeList:
+            self.add_node(last)
+
+        # update dictionaries with correct weight and direction
+        self.parents[last][first] = weight
+        self.children[first][last] = weight
+
+        # Increment edgeNum
+        self.edgeNum += 1
         return 1
 
     def has_edge(self, first, last):   
