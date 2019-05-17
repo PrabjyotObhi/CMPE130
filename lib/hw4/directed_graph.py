@@ -11,6 +11,16 @@ class Digraph:
     def add_node(self, node):
         """adds vertices to your graph"""
 
+        # check if input node is already in graph
+        if node in self.nodeList:
+            print("Node already in graph, unable to add")
+            return
+
+        # add node to list, add node to dictionaries
+        self.nodeList.add(node)
+        self.parents[node] = dict()
+        self.children[node] = dict()
+
         return 1
     def add_edge(self, first, last, weight):
         """creates edge from 'first' to 'last' with assigned 'weight'"""
@@ -39,10 +49,13 @@ class Digraph:
         # if it does not exist in dictionary, it has not been added yet
         return first in self.nodeList and last in self.children[first]
 
-    def remove_edge(self, last, first):
+    def remove_edge(self, first, last):
         """removes edges between two given vertices in your graph"""
-        
-        return 1
+        # use del dict method to delete from dictionary
+        # decrement edgeNum
+        del self.parents[last][first]
+        del self.children[first][last]
+        self.edgeNum -= 1
 
     def remove_node(self, node):
         """removes nodes from your graph along with any vertices they induce"""

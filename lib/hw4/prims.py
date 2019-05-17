@@ -11,7 +11,7 @@ class Graph():
 
     def minPQ(self, value, set):
         min = sys.maxsize
-
+        index
         for v in range(self.V):
             if set[v] is False and value[v] < min:
                 min = value[v]
