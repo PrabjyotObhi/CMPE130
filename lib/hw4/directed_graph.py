@@ -67,6 +67,7 @@ class Digraph:
 
     def contains(self, node):
         """checks if your graph contains a given value"""
-
-        return 1
+        # returns true if node is found
+        # returns false if not found
+        return node in self.nodeList
 
