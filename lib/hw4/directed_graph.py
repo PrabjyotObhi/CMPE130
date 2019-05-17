@@ -41,6 +41,10 @@ class Digraph:
         self.edgeNum += 1
         return 1
 
+    def get_edge_weight(self, first, last):
+        """" Returns weight of particular edge from node first to node last """
+        return self.children[first][last]
+
     def has_edge(self, first, last):
         """checks if a connection exists between two given nodes in your graph, returns boolean"""
 

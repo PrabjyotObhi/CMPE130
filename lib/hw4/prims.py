@@ -5,16 +5,14 @@ class Graph():
     def __init__(self, vertices): 
         self.V = vertices 
         self.graph = [[0 for column in range(vertices)]  
-                    for row in range(vertices)] 
-
-    def primMST(self):
+                    for row in range(vertices)]
 
     def minPQ(self, value, set):
-        min = sys.maxsize
-        index
+        mini = sys.maxsize
+        index = 0
         for v in range(self.V):
-            if set[v] is False and value[v] < min:
-                min = value[v]
+            if set[v] is False and value[v] < mini:
+                mini = value[v]
                 index = v
 
         return index
