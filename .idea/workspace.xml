@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1a7595-dc58-4115-a22c-7934683a536d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/hw4/directed_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hw4/directed_graph.py" afterDir="false" />
-    </list>
+    <list default="true" id="2d1a7595-dc58-4115-a22c-7934683a536d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/hw4/directed_graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            <state relative-caret-position="922">
+              <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -652,8 +650,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/hw4/directed_graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        <state relative-caret-position="922">
+          <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
         </state>
       </provider>
     </entry>

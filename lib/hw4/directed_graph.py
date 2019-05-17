@@ -31,11 +31,13 @@ class Digraph:
         self.edgeNum += 1
         return 1
 
-    def has_edge(self, first, last):   
-        """checks if a connection exists between two given nodes in your graph"""
-        
+    def has_edge(self, first, last):
+        """checks if a connection exists between two given nodes in your graph, returns boolean"""
 
-        return 1
+        # check if tail or head exist | If they do not exist, return false
+        # return true if last exists in child dictionary
+        # if it does not exist in dictionary, it has not been added yet
+        return first in self.nodeList and last in self.children[first]
 
     def remove_edge(self, last, first):
         """removes edges between two given vertices in your graph"""
