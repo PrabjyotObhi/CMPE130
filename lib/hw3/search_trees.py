@@ -1,7 +1,7 @@
 
 import time
 import random
-
+import matplotlib.pyplot as plt
 
 class Array_Search:
     def __init__(self, array):
@@ -41,7 +41,6 @@ class BST_Node:
         self.left = None
         self.right = None
 
-
 class BST:
     def __init__(self):
         self.root = None
@@ -50,41 +49,47 @@ class BST:
         self.root = BST_Node(val)
 
     def insert(self, val):
-        if (self.root is None):
+        # non-recursive
+        if (self.root == None):             # if no value already assigned for root, initialize the node with value
             self.init_bst(val)
         else:
-            self.insertNode(self.root, val)
+            self.insertNode(self.root, val) # otherwise insert as a new node
 
     def insertNode(self, current, val):
-        if self.root is None:
-            self.root = val
+        # recursive function
+        # to begin inserting as a new node, we make sure we are inserting in correct place
+        # and that value is not already held in another node
+
+        if val == current.val:
+            print("Value in tree already, unable to add to tree")
+        elif val < current.val:                       # if our val is less than current nodes value, go left
+            if current.left == None:                # if current.left node is empty, make new node there
+                current.left = BST_Node(val)
+            else:                                   # else, recursively call setting left node to new current node
+                self.insertNode(current.left, val)
+        # we found that val is greater than current value, so go right
+        # same procedure taken if on right side of tree
         else:
-            if self.root.val < val:
-                if self.root.right is None:
-                    self.root.right = val
-                else:
-                    self.insertNode(self, self.root.right, val)
+            if current.right == None:
+                current.right = BST_Node(val)
             else:
-                if self.root.left is None:
-                    self.root.left = val
-                else:
-                    self.insertNode(self, self.root.left, val)
+                self.insertNode(current.right, val)
 
-
-        return False
-
-    def bsearch(self, val):
-        if self.root is None or self.root.val == val:
-            return self.root
-        if self.root.val < val:
-            return self.bsearch(self.root.right, val)
-        return self.bsearch(self.left, val)
-
-        return False
+    def search(self, val):
+        # non-recursive
+        if self.root != None:                           # if root is has a value, call recursive search function
+            return self.searchNode(self.root, val)
+        else:                                           # else, tree is empty
+            print("Empty tree")
 
     def searchNode(self, current, val):
-
-        return False
+        # recursive function
+        if val == current.val:                              # if value is found at current location, return the value
+            return current
+        elif val > current.val and current.right != None:   # if value is greater than current location, and right child occupied,
+            return self.searchNode(current.right, val)      # recursively call on right side
+        elif val < current.val and current.left != None:    # if not greater or equal, must be less than. recursively call on left side
+            return self.searchNode(current.left, val)
 
     def delete(self, val):
         if val < self.root.val:
@@ -194,24 +199,76 @@ class RBBST:
 
 if __name__ == "__main__":
 
-
-    set_sz = 10
+    set_s = 10
     tut = BST()
 
-    vals = random.sample(range(1, 100), set_sz)
+    vals = random.sample(range(1, 100), set_s)
 
-    for idx in range(set_sz - 1):
+    set_szz = 10
+    set_szs = [10 ** 1, 10 ** 2, 10 ** 3, 10 ** 4, 10 ** 5, 10 ** 6]
+    bst = []
+    rbbst = []
+    bs = []
 
-        tut.insert(vals[idx])
+    for set_sz in set_szs:
+        vals = random.sample(range(1, set_sz * 10), set_sz)
+        sort = sorted(vals)
+        array_object = Array_Search(sort)
 
-    print (tut.bsearch(vals[1]))
-    print(tut.bsearch(11))
 
-    tut_rb = RBBST()
 
-    for idx in range(set_sz - 1):
+    tut_bst = BST()
+    for idx in range(set_szz):
+        tut_bst.insert(vals[idx])
+    for set_sz in set_szs:
+        # vals = random.sample(range(1, 100), set_szz)
+        vals = random.sample(range(1, set_sz * 10), set_sz)
+        # initialize network nodes
+        inodes = BST()
 
-        tut_rb.insert(vals[idx])
+        inodes.init_bst(set_sz)
 
-    print (tut.bsearch(vals[1]))
-    print(tut.bsearch(11))
+        t0 = time.time()
+
+        inodes.search(vals[set_sz - 1])
+
+        t1 = time.time()
+
+        total_time = t1 - t0
+
+        bst.append(total_time)
+
+    print("BST search time:  " + str(bst[0]))
+
+    tut_rbbst = RBBST()
+    for idx in range(set_szz):
+        tut_rbbst.insert(vals[idx])
+    for set_sz in set_szs:
+        # initialize network nodes
+        # vals = random.sample(range(1, 100), set_szz)
+        vals = random.sample(range(1, set_sz * 10), set_sz)
+        inodes = RBBST()
+        inodes.init_rbbst(set_sz, RED)
+
+        t0 = time.time()
+
+        inodes.bsearch(vals[set_sz - 1])
+
+        t1 = time.time()
+
+        total_time = t1 - t0
+
+        rbbst.append(total_time)
+
+    print("RBBST search time:  " + str(rbbst[0]))
+
+    plt.plot(set_szs, bst, label='BST', marker='o')
+    plt.plot(set_szs, rbbst, label='RBBST', marker='o')
+
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.title('Different Run Times')
+    plt.ylabel('Run Time')
+    plt.xlabel('10 ^ i')
+    plt.legend()
+    plt.show()
