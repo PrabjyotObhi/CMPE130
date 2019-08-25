@@ -34,3 +34,4 @@ print(str1.lower())
 print(str1.split(","))
 print(str1.strip())
 
+print("yeet")
